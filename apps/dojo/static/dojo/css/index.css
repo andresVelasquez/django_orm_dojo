@@ -1,0 +1,93 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(/static/dojo/images/sakura.jpg);
+  background-color: rgba(238, 238, 238, 0.5);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px;
+}
+
+.wrapper {
+  width: 1100px;
+  height: 1100px;
+  margin: 0 auto;
+  position: relative;
+  background-image: url(/static/dojo/images/ormdojo.jpg);
+  background-color: rgba(238, 238, 238, 0.5);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.greeting {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Caveat Brush", cursive;
+  margin: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+footer p {
+  font-family: "Caveat Brush", cursive;
+  color: red;
+}
+
+#intro {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #d9d9d9;
+  padding: 8px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#intro p {
+  font-size: 18px;
+  margin: 0;
+  font-style: italic;
+}
+ .redText {
+   color: red;
+ }
+
+form {
+   text-align: center;
+ }
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 15px;
+  font-size: 26px;
+  border: 0;
+  color: white;
+  font-family: "Caveat Brush", cursive;
+}
+
+#yellowButton {
+  background-color: #ffff4d;
+  color: black;
+}
+
+#redButton {
+  background-color: #fc3802;
+}
+
+#blackButton {
+  background-color: black;
+}

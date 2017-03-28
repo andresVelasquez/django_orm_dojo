@@ -1,0 +1,223 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+}
+
+header a {
+  font-size: 14px;
+}
+
+#yellowPage {
+  background-color: #ffff4d;
+}
+
+#redPage {
+  background-color: #fc3802;
+}
+
+#blackPage {
+  background-color: black;
+}
+
+#resetAnswers {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.centerJ {
+  text-align: center;
+}
+
+.leftJ {
+  text-align: left;
+}
+
+.greeting {
+  font-family: "Caveat Brush", cursive;
+  font-size: 60px;
+}
+
+.questionText {
+  width: 438px;
+  margin: 8px 0;
+}
+
+textarea {
+  margin: 8px 0;
+}
+
+.table-container {
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 1px solid gray;
+}
+
+.table-container a {
+  font-size: 16px;
+}
+
+th {
+  font-size: 16px !important;
+}
+
+td {
+  font-size: 14px;
+}
+
+.dblabel {
+  color: #4286f4;
+}
+
+.liveDB {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+#teamDiv, #playerDiv {
+  display: inline-block;
+}
+
+#playerDiv {
+  position: absolute;
+  right: 10px;
+}
+
+.sortNote {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+#questionList {
+  overflow-y: scroll;
+}
+
+.question {
+  display: inline-block;
+  width: 534px;
+  height: 270px;
+  vertical-align: top;
+  padding: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.smiley {
+  display: inline-block;
+}
+
+.smiley img {
+  width: 50px;
+  height: 50px;
+}
+
+.resultsWindow {
+  background-color: #e4e7e4;
+  text-align: center;
+}
+
+.resultsWindow h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.qIndex {
+  font-size: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.answerBox {
+  font-size: 14px;
+  resize: none;
+}
+
+.answerButton {
+  background-color: #4286f4;
+  color: white;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.resetButton {
+  background-color: red;
+  color: white;
+  width: 120px;
+  height: 30px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 4px;
+}
+
+footer p {
+  font-family: "Caveat Brush", cursive;
+  color: red;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.redText {
+  color: red;
+}
+
+.greenText {
+  color: green;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 120px;
+    height: 30px;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    top: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 14px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #a6a6a6}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
