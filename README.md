@@ -10,3 +10,5 @@ On the front-end it's just the usual suspects of HTML, CSS, JS with some JQuery 
 
 The data and questions based off the data came from another project that they currently use as an ORM assignment:
 https://github.com/madjaqk/sports_orm.git
+
+I currently have a deployed instance on EC2 (as of 3/28/2017). You can check it out at http://54.218.61.125/
