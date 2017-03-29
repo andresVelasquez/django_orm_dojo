@@ -7,3 +7,6 @@ The app is written in Python 2.7 and Django 1.10. To make HTML tables from the d
 https://github.com/bradleyayers/django-tables2
 
 On the front-end it's just the usual suspects of HTML, CSS, JS with some JQuery thrown in there.
+
+The data and questions based off the data came from another project that they currently use as an ORM assignment:
+https://github.com/madjaqk/sports_orm.git
