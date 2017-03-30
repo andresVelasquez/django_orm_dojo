@@ -10,10 +10,10 @@
     <script src="{% static 'dojo/js/jquery-3.2.0.js' %}" charset="utf-8"></script>
     <script src="{% static 'dojo/js/belts.js' %}" charset="utf-8"></script>
   </head>
-  <body id="blackPage">
+  <body>
     {% load filters %}
     {% load django_tables2 %}
-    <div class="wrapper">
+    <div class="wrapper" id="blackPage">
       <div id="allTables">
         <header>
           <h1 class="centerJ greeting">Black Belt Queries</h1>
