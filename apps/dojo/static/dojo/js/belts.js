@@ -18,21 +18,9 @@ $(document).ready(function(){
       }
     });
   })
-  // $('.hintButton').on({
-  //   "click": function() {
-  //     $(this).tooltip({items: $("button[name='" + $(this).attr("name") + "']"), content: $(this).attr("data")});
-  //     $(this).tooltip("open");
-  //   },
-  //   "mouseout": function() {
-  //      $(this).tooltip("disable");
-  //   }
-  // });
-
   $('.hintButton').click(function(){
     $("#" + $(this).attr("name")).find(".resultsWindow").html("<h1 style='color: #9542f4'><----- HINT ----- HINT ----- HINT -----></h1><br><p class='leftJ'>" + $(this).attr("data") + "</p>");
   })
-
-
   $(window).on('beforeunload', function(){ // this will save the position of the database scrollwindows before a page refresh
     saveScroll();
   })

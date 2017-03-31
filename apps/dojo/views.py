@@ -110,7 +110,7 @@ questionBank = {
     {"questionNumber": "b3", "text": 'Find all players who were formerly (but aren' + "'" + 't currently) with the Wichita Vikings.'},
     {"questionNumber": "b4", "text": 'Find every team that Jacob Gray played for before he joined the Oregon Colts.'},
     {"questionNumber": "b5", "text": 'Find everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players.'},
-    {"questionNumber": "b6", "text": 'Find all teams that have had 12 or more players, past and present. (HINT: Look up the Django "annotate" function)'},
+    {"questionNumber": "b6", "text": 'Find all teams that have had 12 or more players, past and present.', "hint": 'Look up the Django "annotate" function.'},
     {"questionNumber": "b7", "text": "Show all players, sorted by the number of teams they've played for. (most to least, then by first name)"},
     ]
 }
