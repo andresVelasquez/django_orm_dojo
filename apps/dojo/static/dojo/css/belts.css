@@ -86,16 +86,31 @@ td {
 }
 
 .dblabel {
-  color: #4286f4;
+  color: #1062e8;
 }
 
 .liveDB {
   text-align: center;
   margin: 10px 0 0 0;
+  display: inline-block;
+  vertical-align: top;
 }
 
-#teamDiv, #playerDiv {
-  display: inline-block;
+#modelReference {
+  width: 500px;
+  height: 283px;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.liveDB > .table-container {
+  max-height: 300px;
+}
+
+#leagueDiv {
+  position: absolute;
+  right: 40px;
 }
 
 #playerDiv {
@@ -231,4 +246,29 @@ footer p {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.atomGray {
+  color: #abb2be;
+}
+
+.atomPurple {
+  color: #c577d9;
+}
+
+.atomGreen {
+  color: #99c37f;
+}
+
+.atomOrange {
+  color: #cf9a6c;
+}
+
+.atomYellow {
+  color: #e3c082;
+}
+
+#atomBackground {
+  background-color: black;
+  padding: 4px 8px;;
 }

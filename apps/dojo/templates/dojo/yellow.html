@@ -28,6 +28,27 @@
             <a href="/belt/black">Black Belt Queries</a>
           </div>
         </div>
+        <div class="liveDB" id="modelReference">
+          <p class="centerJ dblabel" style="font-size: 16px;">models.py</p>
+          <div id="atomBackground">
+            <p><span class="atomPurple">class</span> <span class="atomYellow">League(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+          	<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">sport = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+          	<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">created_at = models.DateTimeField(</span><span class="atomOrange">auto_now_add=True</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">updated_at = models.DateTimeField(</span><span class="atomOrange">auto_now=True</span><span class="atomGray">)</span></p>
+            <br>
+            <p><span class="atomPurple">class</span> <span class="atomYellow">Team(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">location = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">team_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">league = models.ForeignKey(League, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"teams"</span><span class="atomGray">)</span></p>
+            <br>
+            <p><span class="atomPurple">class</span> <span class="atomYellow">Player(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">first_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">last_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">curr_team = models.ForeignKey(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"curr_players"</span><span class="atomGray">)</span></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">all_teams = models.ManyToManyField(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"all_players"</span><span class="atomGray">)</span></p>
+          </div>
+        </div>
         <div class="liveDB" id="leagueDiv">
           <p class="centerJ dblabel">League.objects.all()</p>
           {% render_table leagueDB %}
