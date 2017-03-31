@@ -65,6 +65,8 @@ header a {
 
 textarea {
   margin: 8px 0;
+  width: 435px;
+  height: 66px;
 }
 
 .table-container {
@@ -282,5 +284,5 @@ footer p {
 
 #atomBackground {
   background-color: black;
-  padding: 4px 8px;;
+  padding: 3px 8px;;
 }
