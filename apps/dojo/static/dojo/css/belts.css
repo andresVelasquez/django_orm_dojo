@@ -25,13 +25,13 @@ header a {
 }
 
 #yellowPage {
-  border-left: 20px solid #ffff4d;
-  border-right: 20px solid #ffff4d;
+  border-left: 20px solid yellow;
+  border-right: 20px solid yellow;
 }
 
 #redPage {
-  border-left: 20px solid #fc3802;
-  border-right: 20px solid #fc3802;
+  border-left: 20px solid red;
+  border-right: 20px solid red;
 }
 
 #blackPage {

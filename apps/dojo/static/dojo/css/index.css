@@ -80,12 +80,12 @@ input[type="submit"] {
 }
 
 #yellowButton {
-  background-color: #ffff4d;
+  background-color: yellow;
   color: black;
 }
 
 #redButton {
-  background-color: #fc3802;
+  background-color: red;
 }
 
 #blackButton {
