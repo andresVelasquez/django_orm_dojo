@@ -179,6 +179,18 @@ td {
   border-radius: 4px;
 }
 
+.hintButton {
+  background-color: #9542f4;
+  color: white;
+  width: 80px;
+  height: 40px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 4px;
+  margin-left: 194px;
+
+}
+
 .resetButton {
   background-color: red;
   color: white;
