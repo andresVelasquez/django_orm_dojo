@@ -8,8 +8,17 @@ $(document).ready(function(){
       location.reload(true); // putting true reloads page from server instead of cache. no parameter defaults fo false which loads from cache
     })
   })
-  $(".answerButton").click(function(){
-    $.get("/check", {"questionNumber": $(this).attr("name"), "response": $("textarea[name=" + $(this).attr("name") + "]").val(), "beltcolor": $("#beltcolor").attr("name")}, function(results){
+  $(".answerButton").click(function(){ // lister on submit button to run check function
+    check($(this));
+  })
+  $(".answerBox").keypress(function(event) { // listener on keypresses in the answerbox to look for the Enter key which will then call the check function
+    if(event.which == '13') { // event code 13 is the Enter key so I intercept this and instead of doing a line break in the textarea, it will call the check function passing the textarea obect as an argument
+      check($(this));
+      return false; // returning false here disables the line break that would happen after the check function returns
+    }
+  });
+  function check(thisObject){ // this will get either button object or textarea object which is fine because they both have a "name" property equal to the question number which is the attribute that is looked at
+    $.get("/check", {"questionNumber": thisObject.attr("name"), "response": $("textarea[name=" + thisObject.attr("name") + "]").val(), "beltcolor": $("#beltcolor").attr("name")}, function(results){
       $("#" + results["div"]).find(".resultsWindow").html(results["resultsWindow"]);
       if(results["smiley"]){ // check if there's a smiley in the results that needs to be rendered
         $("#" + results["div"]).find(".smiley").html("<img src='/static/dojo/images/smiley.png' alt='smiley'>");
@@ -17,7 +26,7 @@ $(document).ready(function(){
         $("#" + results["div"]).find(".smiley").html("");
       }
     });
-  })
+  }
   $('.hintButton').click(function(){
     $("#" + $(this).attr("name")).find(".resultsWindow").html("<h1 style='color: #9542f4'><----- HINT ----- HINT ----- HINT -----></h1><br><p class='leftJ'>" + $(this).attr("data") + "</p>");
   })
