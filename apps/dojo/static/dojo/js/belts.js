@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#questionList").css({'height': $(window).height() - ($("#allTables").height() + 58)}); // this calculates the window size, then sets the questionList height to that minus the allTables div size plus some extra for padding, borders, etc. this makes the questions scrollable but not the main page
+  // $("#questionList").css({'height': $(window).height() - ($("#allTables").height() + 58)}); // this calculates the window size, then sets the questionList height to that minus the allTables div size plus some extra for padding, borders, etc. this makes the questions scrollable but not the main page
   setScroll();
   $("#resetAnswers").click(function(){
     $.get("/clearsession", function(){
@@ -24,9 +24,9 @@ $(document).ready(function(){
   $(window).on('beforeunload', function(){ // this will save the position of the database scrollwindows before a page refresh
     saveScroll();
   })
-  $(window).resize(function(){
-    $("#questionList").css({'height': $(window).height() - ($("#allTables").height() + 58)});
-  })
+  // $(window).resize(function(){
+  //   $("#questionList").css({'height': $(window).height() - ($("#allTables").height() + 58)});
+  // })
 })
 
 /*  answerButtons are jquery AJAX because I don't want a page refresh just to update the one answer div

@@ -14,86 +14,82 @@
     {% load filters %}
     {% load django_tables2 %}
     <div class="wrapper" id="blackPage">
-      <div id="allTables">
-        <header>
-          <h1 class="centerJ greeting">Black Belt Queries</h1>
-          <h3 class="centerJ">ManyToMany Relationships</h3>
-          <button class="resetButton" id="resetAnswers" type="button">Reset Answers</button>
-        </header>
-        <div class="dropdown">
-          <button class="dropbtn">Navigation</button>
-          <div class="dropdown-content">
-            <a href="/">Home</a>
-            <a href="/belt/yellow">Yellow Belt Queries</a>
-            <a href="/belt/red">Red Belt Queries</a>
-          </div>
+      <header>
+        <h1 class="centerJ greeting">Black Belt Queries</h1>
+        <h3 class="centerJ">ManyToMany Relationships</h3>
+        <button class="resetButton" id="resetAnswers" type="button">Reset Answers</button>
+      </header>
+      <div class="dropdown">
+        <button class="dropbtn">Navigation</button>
+        <div class="dropdown-content">
+          <a href="/">Home</a>
+          <a href="/belt/yellow">Yellow Belt Queries</a>
+          <a href="/belt/red">Red Belt Queries</a>
         </div>
-        <div class="liveDB" id="modelReference">
-          <p class="centerJ dblabel" style="font-size: 16px;">models.py</p>
-          <div id="atomBackground">
-            <p><span class="atomPurple">class</span> <span class="atomYellow">League(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">sport = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">created_at = models.DateTimeField(</span><span class="atomOrange">auto_now_add=True</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">updated_at = models.DateTimeField(</span><span class="atomOrange">auto_now=True</span><span class="atomGray">)</span></p>
-            <br>
-            <p><span class="atomPurple">class</span> <span class="atomYellow">Team(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">location = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">team_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">league = models.ForeignKey(League, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"teams"</span><span class="atomGray">)</span></p>
-            <br>
-            <p><span class="atomPurple">class</span> <span class="atomYellow">Player(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">first_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">last_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">curr_team = models.ForeignKey(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"curr_players"</span><span class="atomGray">)</span></p>
-            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">all_teams = models.ManyToManyField(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"all_players"</span><span class="atomGray">)</span></p>
-          </div>
-        </div>
-        <div class="liveDB" id="leagueDiv">
-          <p class="centerJ dblabel">League.objects.all()</p>
-          {% render_table leagueDB %}
-        </div>
-        <div class="liveDB" id="teamDiv">
-          <p class="centerJ dblabel">Team.objects.all()</p>
-          {% render_table teamDB %}
-        </div>
-        <div class="liveDB" id="playerDiv">
-          <p class="centerJ dblabel">Player.objects.all()</p>
-          {% render_table playerDB %}
-        </div>
-        <p class="sortNote">* You can click on the table headers to sort the table data but beware that it will refresh the page clearing everything except questions already answered correctly.</p>
       </div>
+      <div class="liveDB" id="modelReference">
+        <p class="centerJ dblabel" style="font-size: 16px;">models.py</p>
+        <div id="atomBackground">
+          <p><span class="atomPurple">class</span> <span class="atomYellow">League(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">sport = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">created_at = models.DateTimeField(</span><span class="atomOrange">auto_now_add=True</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">updated_at = models.DateTimeField(</span><span class="atomOrange">auto_now=True</span><span class="atomGray">)</span></p>
+          <br>
+          <p><span class="atomPurple">class</span> <span class="atomYellow">Team(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">location = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">team_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">50</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">league = models.ForeignKey(League, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"teams"</span><span class="atomGray">)</span></p>
+          <br>
+          <p><span class="atomPurple">class</span> <span class="atomYellow">Player(</span><span class="atomGreen">models.Model</span><span class="atomYellow">)</span><span class="atomGray">:</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">first_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">last_name = models.CharField</span><span class="atomGray">(</span><span class="atomOrange">max_length</span><span class="atomGray">=</span><span class="atomOrange">15</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">curr_team = models.ForeignKey(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"curr_players"</span><span class="atomGray">)</span></p>
+          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="atomGray">all_teams = models.ManyToManyField(Team, </span><span class="atomOrange">related_name</span><span class="atomGray">=</span><span class="atomGreen">"all_players"</span><span class="atomGray">)</span></p>
+        </div>
+      </div>
+      <div class="liveDB" id="leagueDiv">
+        <p class="centerJ dblabel">League.objects.all()</p>
+        {% render_table leagueDB %}
+      </div>
+      <div class="liveDB" id="teamDiv">
+        <p class="centerJ dblabel">Team.objects.all()</p>
+        {% render_table teamDB %}
+      </div>
+      <div class="liveDB" id="playerDiv">
+        <p class="centerJ dblabel">Player.objects.all()</p>
+        {% render_table playerDB %}
+      </div>
+      <p class="sortNote">* You can click on the table headers to sort the table data but beware that it will refresh the page clearing everything except questions already answered correctly.</p>
       <hr>
-      <div id="questionList">
-        {% for question in questions %}
-          <div id="{{question.questionNumber}}">
-            <div class="question">
-              <p class="qIndex">{{forloop.counter}}.</p>
-              <div class="smiley">
-                {% if request.session|look_for_questionNumber:question.questionNumber %}
-                  <img src="{% static 'dojo/images/smiley.png' %}" alt="smiley">
-                {% endif %}
-              </div>
-              <p class="questionText">{{question.text}}</p>
-              <textarea class="answerBox" name="{{question.questionNumber}}" maxlength="200">{% if request.session|look_for_questionNumber:question.questionNumber %}{{request.session|get_response:question.questionNumber}}{% endif %}</textarea>
-              <button class="answerButton" type="button" name="{{question.questionNumber}}">Submit ORM Query</button>
-              {% if question.hint %}
-                <button class="hintButton" type="button" name="{{question.questionNumber}}" data="{{question.hint}}">Hint</button>
-              {% endif %}
-            </div>
-            <div class="question resultsWindow">
+      {% for question in questions %}
+        <div id="{{question.questionNumber}}">
+          <div class="question">
+            <p class="qIndex">{{forloop.counter}}.</p>
+            <div class="smiley">
               {% if request.session|look_for_questionNumber:question.questionNumber %}
-                {{request.session|get_resultsWindow:question.questionNumber|safe}}
-              {% else %}
-                <h2>results</h2>
+                <img src="{% static 'dojo/images/smiley.png' %}" alt="smiley">
               {% endif %}
             </div>
+            <p class="questionText">{{question.text}}</p>
+            <textarea class="answerBox" name="{{question.questionNumber}}" maxlength="200">{% if request.session|look_for_questionNumber:question.questionNumber %}{{request.session|get_response:question.questionNumber}}{% endif %}</textarea>
+            <button class="answerButton" type="button" name="{{question.questionNumber}}">Submit ORM Query</button>
+            {% if question.hint %}
+              <button class="hintButton" type="button" name="{{question.questionNumber}}" data="{{question.hint}}">Hint</button>
+            {% endif %}
           </div>
-          {% if forloop.counter < questions|length %}
-            <hr>
-          {% endif %}
-        {% endfor %}
-      </div>
+          <div class="question resultsWindow">
+            {% if request.session|look_for_questionNumber:question.questionNumber %}
+              {{request.session|get_resultsWindow:question.questionNumber|safe}}
+            {% else %}
+              <h2>results</h2>
+            {% endif %}
+          </div>
+        </div>
+        {% if forloop.counter < questions|length %}
+          <hr>
+        {% endif %}
+      {% endfor %}
       <hr>
       <footer><p>Created by Andres Velasquez</p></footer>
       <input id="beltcolor" type="hidden" name="black">

@@ -127,9 +127,9 @@ td {
   text-align: center;
 }
 
-#questionList {
+/*#questionList {
   overflow-y: scroll;
-}
+}*/
 
 .question {
   display: inline-block;
