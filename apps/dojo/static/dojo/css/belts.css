@@ -103,7 +103,7 @@ td {
   height: 283px;
   font-size: 14px;
   text-align: left;
-  margin-left: 30px;
+  margin-left: 36px;
 }
 
 .liveDB > .table-container {
@@ -112,12 +112,12 @@ td {
 
 #leagueDiv {
   position: absolute;
-  right: 40px;
+  right: 46px;
 }
 
 #playerDiv {
   position: absolute;
-  right: 10px;
+  right: 40px;
 }
 
 .sortNote {
@@ -126,10 +126,6 @@ td {
   margin-bottom: 4px;
   text-align: center;
 }
-
-/*#questionList {
-  overflow-y: scroll;
-}*/
 
 .question {
   display: inline-block;
@@ -285,4 +281,8 @@ footer p {
 #atomBackground {
   background-color: black;
   padding: 3px 8px;;
+}
+
+#teamDiv {
+  margin-left: 30px;
 }

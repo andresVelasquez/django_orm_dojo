@@ -19,7 +19,7 @@ class TeamTable(tables.Table):
     id = tables.Column(verbose_name = "id")
     location = tables.Column(verbose_name="location")
     team_name = tables.Column(verbose_name="team_name")
-    league = tables.Column(accessor = 'league.name', verbose_name = 'league (object)')
+    league = tables.Column(accessor = 'league.name', verbose_name = 'league')
 
     class Meta:
     	model = Team
@@ -31,7 +31,7 @@ class PlayerTable(tables.Table):
     id = tables.Column(verbose_name = "id")
     first_name = tables.Column(verbose_name = "first_name")
     last_name = tables.Column(verbose_name = "last_name")
-    curr_team = tables.Column(accessor = 'curr_team.team_name', verbose_name = 'curr_team (object)')
+    curr_team = tables.Column(accessor = 'curr_team.team_name', verbose_name = 'curr_team')
 
     class Meta:
     	model = Player
