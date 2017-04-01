@@ -28,7 +28,7 @@ $(document).ready(function(){
     });
   }
   $('.hintButton').click(function(){
-    $("#" + $(this).attr("name")).find(".resultsWindow").html("<h1 style='color: #9542f4'><----- HINT ----- HINT ----- HINT -----></h1><br><p class='leftJ'>" + $(this).attr("data") + "</p>");
+    $("#" + $(this).attr("name")).find(".resultsWindow").html("<h2 style='color: #9542f4'>Hint</h2><p class='leftJ'>" + $(this).attr("data") + "</p>");
   })
   $(window).on('beforeunload', function(){ // this will save the position of the database scrollwindows before a page refresh
     saveScroll();
