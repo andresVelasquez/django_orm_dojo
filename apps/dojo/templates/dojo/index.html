@@ -10,7 +10,18 @@
     <script src="{% static 'dojo/js/jquery-3.2.0.js' %}" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $("body").css({'height': $(window).height()});
+        if ($(window).height() < 1100){
+          $("body").css({'height': 1100});
+        } else {
+          $("body").css({'height': $(window).height()});
+        }
+      })
+      $(window).resize(function(){
+        if ($(window).height() < 1100){
+          $("body").css({'height': 1100});
+        } else {
+          $("body").css({'height': $(window).height()});
+        }
       })
     </script>
   </head>
