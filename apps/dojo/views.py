@@ -77,7 +77,7 @@ def clearSession(request):
 # questionBank was a dictionary of dictionaries before but I found that when using for key, value in template with that dictionary did not necessarily preserve the order. Iterating a list will go in order however so it's a list now
 questionBank = {
     "yellow": [ # questionNumber must be in order starting with y1 for yellow, r1 for red and b1 for black. Text key is the question itself.
-    {"questionNumber": "y1", "text": "Find all baseball leagues."}, # add a hint key to any question you want to have a hint button for (shown next to submit button). value will be the hint text to display in the resultsWindow to the right
+    {"questionNumber": "y1", "text": "Find all baseball leagues."},
     {"questionNumber": "y2", "text": "Find all womens' leagues."},
     {"questionNumber": "y3", "text": "Find all leagues where sport is any type of hockey."},
     {"questionNumber": "y4", "text": "Find all leagues where sport is something OTHER THAN football."},
@@ -110,7 +110,7 @@ questionBank = {
     {"questionNumber": "b3", "text": 'Find all players who were formerly (but aren' + "'" + 't currently) with the Wichita Vikings.'},
     {"questionNumber": "b4", "text": 'Find every team that Jacob Gray played for before he joined the Oregon Colts.'},
     {"questionNumber": "b5", "text": 'Find everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players.'},
-    {"questionNumber": "b6", "text": 'Find all teams that have had 12 or more players, past and present.', "hint": 'Look up the Django "annotate" function.'},
+    {"questionNumber": "b6", "text": 'Find all teams that have had 12 or more players, past and present.', "hint": 'Look up the Django "annotate" function.'}, # add a hint key to any question you want to have a hint button for (shown next to submit button). value will be the hint text to display in the resultsWindow to the right
     {"questionNumber": "b7", "text": "Show all players, sorted by the number of teams they've played for. (most to least, then by first name)"},
     ]
 }
