@@ -15,6 +15,11 @@
         } else {
           $("body").css({'height': $(window).height()});
         }
+        if ($(window).width() < 1100){
+          $("body").css({'width': 1100});
+        } else {
+          $("body").css({'width': $(window).width()});
+        }
         $("button").click(function(){
           window.location = ('/belt/' + $(this).attr("name"));
         })
@@ -24,6 +29,11 @@
           $("body").css({'height': 1100});
         } else {
           $("body").css({'height': $(window).height()});
+        }
+        if ($(window).width() < 1100){
+          $("body").css({'width': 1100});
+        } else {
+          $("body").css({'width': $(window).width()});
         }
       })
     </script>
