@@ -39,7 +39,7 @@ $(document).ready(function(){
     by doing a redirect("/") in views.py will always go to the top of the page whereas a page reload here with location.reload() will keep the current window positions
 */
 
-function saveScroll(){
+function saveScroll(){ // saves scroll positions of tables and main page before page is refreshed
   if (window.location.pathname == "/belt/yellow") {
     sessionStorage.setItem("lTopYellow", $("#leagueDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("lLeftYellow", $("#leagueDiv").find(".table-container").scrollLeft());
@@ -47,8 +47,8 @@ function saveScroll(){
     sessionStorage.setItem("tLeftYellow", $("#teamDiv").find(".table-container").scrollLeft());
     sessionStorage.setItem("pTopYellow", $("#playerDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("pLeftYellow", $("#playerDiv").find(".table-container").scrollLeft());
-    sessionStorage.setItem("qTopYellow", $("#questionList").scrollTop());
-    sessionStorage.setItem("qLeftYellow", $("#questionList").scrollLeft());
+    sessionStorage.setItem("mTopYellow", $("body").scrollTop());
+    sessionStorage.setItem("mLeftYellow", $("body").scrollLeft());
   } else if (window.location.pathname == "/belt/red") {
     sessionStorage.setItem("lTopRed", $("#leagueDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("lLeftRed", $("#leagueDiv").find(".table-container").scrollLeft());
@@ -56,8 +56,8 @@ function saveScroll(){
     sessionStorage.setItem("tLeftRed", $("#teamDiv").find(".table-container").scrollLeft());
     sessionStorage.setItem("pTopRed", $("#playerDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("pLeftRed", $("#playerDiv").find(".table-container").scrollLeft());
-    sessionStorage.setItem("qTopRed", $("#questionList").scrollTop());
-    sessionStorage.setItem("qLeftRed", $("#questionList").scrollLeft());
+    sessionStorage.setItem("mTopRed", $("body").scrollTop());
+    sessionStorage.setItem("mLeftRed", $("body").scrollLeft());
   } else if (window.location.pathname == "/belt/black") {
     sessionStorage.setItem("lTopBlack", $("#leagueDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("lLeftBlack", $("#leagueDiv").find(".table-container").scrollLeft());
@@ -65,12 +65,12 @@ function saveScroll(){
     sessionStorage.setItem("tLeftBlack", $("#teamDiv").find(".table-container").scrollLeft());
     sessionStorage.setItem("pTopBlack", $("#playerDiv").find(".table-container").scrollTop());
     sessionStorage.setItem("pLeftBlack", $("#playerDiv").find(".table-container").scrollLeft());
-    sessionStorage.setItem("qTopBlack", $("#questionList").scrollTop());
-    sessionStorage.setItem("qLeftBlack", $("#questionList").scrollLeft());
+    sessionStorage.setItem("mTopBlack", $("body").scrollTop());
+    sessionStorage.setItem("mLeftBlack", $("body").scrollLeft());
   }
 }
 
-function setScroll(){
+function setScroll(){ // restores scroll positions after document is ready
   if (window.location.pathname == "/belt/yellow"){
     $("#leagueDiv").find(".table-container").scrollTop(sessionStorage.getItem("lTopYellow"));
     $("#leagueDiv").find(".table-container").scrollLeft(sessionStorage.getItem("lLeftYellow"));
@@ -78,8 +78,8 @@ function setScroll(){
     $("#teamDiv").find(".table-container").scrollLeft(sessionStorage.getItem("tLeftYellow"));
     $("#playerDiv").find(".table-container").scrollTop(sessionStorage.getItem("pTopYellow"));
     $("#playerDiv").find(".table-container").scrollLeft(sessionStorage.getItem("pLeftYellow"));
-    $("#questionList").scrollTop(sessionStorage.getItem("qTopYellow"));
-    $("#questionList").scrollLeft(sessionStorage.getItem("qLeftYellow"));
+    $("body").scrollTop(sessionStorage.getItem("mTopYellow"));
+    $("body").scrollLeft(sessionStorage.getItem("mLeftYellow"));
   } else if (window.location.pathname == "/belt/red"){
     $("#leagueDiv").find(".table-container").scrollTop(sessionStorage.getItem("lTopRed"));
     $("#leagueDiv").find(".table-container").scrollLeft(sessionStorage.getItem("lLeftRed"));
@@ -87,8 +87,8 @@ function setScroll(){
     $("#teamDiv").find(".table-container").scrollLeft(sessionStorage.getItem("tLeftRed"));
     $("#playerDiv").find(".table-container").scrollTop(sessionStorage.getItem("pTopRed"));
     $("#playerDiv").find(".table-container").scrollLeft(sessionStorage.getItem("pLeftRed"));
-    $("#questionList").scrollTop(sessionStorage.getItem("qTopRed"));
-    $("#questionList").scrollLeft(sessionStorage.getItem("qLeftRed"));
+    $("body").scrollTop(sessionStorage.getItem("mTopRed"));
+    $("body").scrollLeft(sessionStorage.getItem("mLeftRed"));
   } else if (window.location.pathname == "/belt/black"){
     $("#leagueDiv").find(".table-container").scrollTop(sessionStorage.getItem("lTopBlack"));
     $("#leagueDiv").find(".table-container").scrollLeft(sessionStorage.getItem("lLeftBlack"));
@@ -96,18 +96,18 @@ function setScroll(){
     $("#teamDiv").find(".table-container").scrollLeft(sessionStorage.getItem("tLeftBlack"));
     $("#playerDiv").find(".table-container").scrollTop(sessionStorage.getItem("pTopBlack"));
     $("#playerDiv").find(".table-container").scrollLeft(sessionStorage.getItem("pLeftBlack"));
-    $("#questionList").scrollTop(sessionStorage.getItem("qTopBlack"));
-    $("#questionList").scrollLeft(sessionStorage.getItem("qLeftBlack"));
+    $("body").scrollTop(sessionStorage.getItem("mTopBlack"));
+    $("body").scrollLeft(sessionStorage.getItem("mLeftBlack"));
   }
 }
 
 function setScrollZero(){ // I want all the scroll positions to be deleted when the resetAnswers button is clicked. That function does indeed clear the scroll position data in sessionStorage. However, the "beforeunload" method will re-save the data for the current page so it gets put back after the page refresh. So, reset the current page scroll positions to 0 manually when the resetAnswers is clicked
-  $("#leagueDiv").find(".table-container").scrollTop(0); // scroll positions for DB windows loaded from sessionStorage, then cleared
+  $("#leagueDiv").find(".table-container").scrollTop(0);
   $("#leagueDiv").find(".table-container").scrollLeft(0);
   $("#teamDiv").find(".table-container").scrollTop(0);
   $("#teamDiv").find(".table-container").scrollLeft(0);
   $("#playerDiv").find(".table-container").scrollTop(0);
   $("#playerDiv").find(".table-container").scrollLeft(0);
-  $("#questionList").scrollTop(0);
-  $("#questionList").scrollLeft(0);
+  $("body").scrollTop(0);
+  $("body").scrollLeft(0);
 }
