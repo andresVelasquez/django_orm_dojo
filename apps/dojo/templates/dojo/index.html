@@ -15,6 +15,9 @@
         } else {
           $("body").css({'height': $(window).height()});
         }
+        $("button").click(function(){
+          window.location = ('/belt/' + $(this).attr("name"));
+        })
       })
       $(window).resize(function(){
         if ($(window).height() < 1100){
@@ -36,18 +39,9 @@
         your query and whether or not it retrieved the expected records from the database. If the query generated an error, it will show the error. The yellow belt exam starts off with simple
         "find" queries. The red belt exam deals with ForeignKey relationships. Finally, the black belt exam tests your knowledge of ManyToMany relationships. Have fun!</p>
       </div>
-      <form action="/belt/yellow" method="post">
-        {% csrf_token %}
-        <input id="yellowButton" type="submit" value="Yellow Belt Queries">
-      </form>
-      <form action="/belt/red" method="post">
-        {% csrf_token %}
-        <input id="redButton" type="submit" value="Red Belt Queries">
-      </form>
-      <form action="/belt/black" method="post">
-        {% csrf_token %}
-        <input id="blackButton" type="submit" value="Black Belt Queries">
-      </form>
+      <button id="yellowButton" type="button" name="yellow">Yellow Belt Queries</button>
+      <button id="redButton" type="button" name="red">Red Belt Queries</button>
+      <button id="blackButton" type="button" name="black">Black Belt Queries</button>
       <footer><p>Created by Andres Velasquez</p></footer>
     </div>
   </body>
