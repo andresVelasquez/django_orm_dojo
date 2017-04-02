@@ -10,28 +10,25 @@
     <script src="{% static 'dojo/js/jquery-3.2.0.js' %}" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        if ($(window).height() < 1100){
-          $("body").css({'height': 1100});
+        if ($(window).height() < 1180){
+          $("body").css({'height': 1180});
         } else {
           $("body").css({'height': $(window).height()});
         }
-        if ($(window).width() < 1100){
-          $("body").css({'width': 1100});
+        if ($(window).width() < 1180){
+          $("body").css({'width': 1180});
         } else {
           $("body").css({'width': $(window).width()});
         }
-        $("button").click(function(){
-          window.location = ('/belt/' + $(this).attr("name"));
-        })
       })
       $(window).resize(function(){
-        if ($(window).height() < 1100){
-          $("body").css({'height': 1100});
+        if ($(window).height() < 1180){
+          $("body").css({'height': 1180});
         } else {
           $("body").css({'height': $(window).height()});
         }
-        if ($(window).width() < 1100){
-          $("body").css({'width': 1100});
+        if ($(window).width() < 1180){
+          $("body").css({'width': 1180});
         } else {
           $("body").css({'width': $(window).width()});
         }
