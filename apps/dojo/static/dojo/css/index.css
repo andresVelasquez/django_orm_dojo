@@ -34,15 +34,21 @@ body {
   margin: 0;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-}
-
 footer p {
   font-family: "Caveat Brush", cursive;
   color: red;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+}
+
+#gitHubLink {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 #intro {

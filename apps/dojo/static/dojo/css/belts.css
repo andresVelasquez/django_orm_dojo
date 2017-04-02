@@ -199,11 +199,25 @@ td {
   border-radius: 4px;
 }
 
+footer {
+  margin-top: 30px;
+}
+
 footer p {
   font-family: "Caveat Brush", cursive;
   color: red;
-  margin-top: 10px;
-  text-align: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+}
+
+#gitHubLink {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none;
+  color: #9542f4;
 }
 
 .redText {
