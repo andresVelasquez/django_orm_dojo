@@ -74,7 +74,7 @@
             <p class="questionText">{{question.text}}</p>
             <textarea class="answerBox" name="{{question.questionNumber}}" maxlength="200">{% if request.session|look_for_questionNumber:question.questionNumber %}{{request.session|get_response:question.questionNumber}}{% endif %}</textarea>
             <button class="answerButton" type="button" name="{{question.questionNumber}}">Submit ORM Query</button>
-            {% if question.hint %}
+            {% if question.hint and not request.session|look_for_questionNumber:question.questionNumber %}
               <button class="hintButton" type="button" name="{{question.questionNumber}}" data="{{question.hint}}">Hint</button>
             {% endif %}
           </div>
