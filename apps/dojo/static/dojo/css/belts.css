@@ -300,3 +300,7 @@ footer p {
 #teamDiv {
   margin-left: 30px;
 }
+
+.hideHintButton {
+  display: none;
+}

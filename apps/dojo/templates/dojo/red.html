@@ -76,6 +76,8 @@
             <button class="answerButton" type="button" name="{{question.questionNumber}}">Submit ORM Query</button>
             {% if question.hint and not request.session|look_for_questionNumber:question.questionNumber %}
               <button class="hintButton" type="button" name="{{question.questionNumber}}" data="{{question.hint}}">Hint</button>
+            {% else %}
+              <button class="hintButton hideHintButton" type="button" name="{{question.questionNumber}}" data="{{question.hint}}">Hint</button>
             {% endif %}
           </div>
           <div class="question resultsWindow">

@@ -21,8 +21,10 @@ $(document).ready(function(){
       $("#" + results["div"]).find(".resultsWindow").html(results["resultsWindow"]);
       if(results["smiley"]){ // check if there's a smiley in the results that needs to be rendered
         $("#" + results["div"]).find(".smiley").html("<img src='/static/dojo/images/smiley.png' alt='smiley'>");
+        $("#" + results["div"]).find(".hintButton").addClass("hideHintButton"); // hide hint button after right answer is given
       } else { // if smiley not present in response, delete it from the smiley div because wrong answer was submitted
         $("#" + results["div"]).find(".smiley").html("");
+        $("#" + results["div"]).find(".hintButton").removeClass("hideHintButton"); // show hint button if incorrect answer is given
       }
     });
   }
