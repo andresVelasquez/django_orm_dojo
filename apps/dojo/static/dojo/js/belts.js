@@ -24,7 +24,9 @@ $(document).ready(function(){
         $("#" + results["div"]).find(".hintButton").addClass("hideHintButton"); // hide hint button after right answer is given
       } else { // if smiley not present in response, delete it from the smiley div because wrong answer was submitted
         $("#" + results["div"]).find(".smiley").html("");
-        $("#" + results["div"]).find(".hintButton").removeClass("hideHintButton"); // show hint button if incorrect answer is given
+        if($("#" + results["div"]).find(".hintButton").attr('data')){
+          $("#" + results["div"]).find(".hintButton").removeClass("hideHintButton"); // show hint button if incorrect answer is given
+        }
       }
     });
   }
